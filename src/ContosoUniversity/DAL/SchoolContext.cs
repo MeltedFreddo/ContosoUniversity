@@ -12,6 +12,7 @@ namespace ContosoUniversity.DAL
     {
         private DbContextTransaction _currentTransaction;
 
+        public SchoolContext() :base("name=SchoolContext") { }
 
         public SchoolContext(string nameOrConnectionString) : base(nameOrConnectionString)
         {

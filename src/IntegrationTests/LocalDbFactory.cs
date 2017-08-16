@@ -4,8 +4,8 @@
     using System.Data.SqlClient;
     using System.Data.SqlLocalDb;
     using System.IO;
-    using roundhouse;
-    using Logger = roundhouse.infrastructure.logging.Logger;
+    //using roundhouse;
+    //using Logger = roundhouse.infrastructure.logging.Logger;
 
     public static class LocalDbFactory
     {
@@ -38,7 +38,7 @@
             builder.InitialCatalog = databaseName;
 
             var connectionString = builder.ConnectionString;
-
+            /*
             var migrate = new Migrate().Set(c =>
             {
                 c.ConnectionString = connectionString;
@@ -48,10 +48,10 @@
                 c.SqlFilesDirectory = Path.Combine(Environment.CurrentDirectory, "DatabaseMigration");
             });
             migrate.Run();
-
+            */
             return instance;
         }
-
+        /*
         private class ConsoleLogger : Logger
         {
             public void log_a_debug_event_containing(string message, params object[] args)
@@ -80,6 +80,6 @@
             }
 
             public object underlying_type { get { return typeof (ConsoleLogger); } }
-        }
+        }*/
     }
 }
